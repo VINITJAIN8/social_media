@@ -1,0 +1,36 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Sign Up - Social Book</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+</head>
+
+<body>
+                    <div>
+                        
+                        <a href="/signin">Login</a>
+                    </div>
+                <h1> Sign Up</h1>
+                <!--<p class="mb-2 text-black text-lg"> Register to manage your account </p>-->          
+                <form action="" method="post">
+                    {% csrf_token %}
+                    <input type="text" name="username" placeholder="Username">
+                    <input type="email" name="email" placeholder="Email">
+                    <input type="password" name="password" placeholder="Password">
+                    <input type="password" name="password2" placeholder="Confirm Password">
+                    <button type="submit">Sign Up</button>
+                    <div>
+                        <p> Do you have an account? <a href="/signin"> Login </a></p>
+                    </div>
+                </form>
+</body>
+
+
+</html>

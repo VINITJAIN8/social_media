@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>create your profile</h1>
+    <form action="" method="post">
+        {% csrf_token %}
+        <input type="text" placeholder="bio" name="bio">
+        <!-- <input type="image" value="profile image" name="profile_img"> -->
+        <input type="text" placeholder="location" name="location">
+        <input type="text" placeholder="work" name="work">
+        <input type="text" placeholder="relationship" name="relationship">
+        <input type="date" placeholder="dob" name="dob">
+        <input type="text" placeholder="contact no" name="contact_no">
+        <button type="submit">Create Profile</button>
+    </form>
+</body>
+</html>

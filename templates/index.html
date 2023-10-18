@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <a href="{% url 'edit_profile' %}">Create/Update profile</a>
+    <a href="{% url 'list_connection' %}">Connection</a>
+    <a href="{% url 'logout_user' %}">Logout</a>
+    {% for post in post %}
+    <p>{{ post.caption }}</p>
+    <p>{{ post.user }}</p>
+    <p>{{ post.created_at }}</p>
+    
+    
+    <a href="delete/{{post.id}}">Delete</a>
+    <a href="like_post/{{post.id}}">Like</a><br>
+    <a href="del_like/{{post.id}}">Dislike</a>
+    <a href="see_who_liked/{{post.id}}">See Who Liked</a>
+    <a href="comment/{{post.id}}">Comment</a>
+    
+    
+    <form action="add_comment/{{post.id}}" method="post">
+        {% csrf_token %}
+        <input type="text" value="add comment" name="content">
+        <button type="submit">Submit</button>
+    </form>
+    {% endfor %}
+</body>
+</html>
+
+
+   

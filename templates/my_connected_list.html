@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>{{ user.username }} is connected to </h2>
+    {% for list in my_list %}
+    <p>{{ list.follow_list }}</p>
+    <form action="" method="post">
+        {% csrf_token %}
+        <a href="del_connection/{{list.id}}" type="submit">Disconnect</a>
+    </form>
+    {% endfor %}
+</body>
+</html>
